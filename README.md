@@ -1,4 +1,4 @@
-# VBA of Wall Street
+# Green Stock Analysis
 
 ## Overview of Project
 <p>
@@ -21,7 +21,7 @@ In 2017, all of the green energy stocks in the dataset experienced a positive an
 <img src = "resources/stock_analysis_2018.png"></img>
 </br>
 <p>
-Most of the green stocks that experienced a positive growth in 2017 decreased in value in 2018. Among them is DQ which exhibited a 62.6% decline in value by the end of 2018. Considering its contrasting  performance in 2017, DQ stock price behaviour is extremely volatile. Along with its low liquidity from its low trading volume, DQ stock can be a risky investment. Therefore, investors should strongly consider diversifying their portfolio of green investments to other comapanies such as ENPH and RUN. Both of their stock prices experienced consecutive positive growth rates in 2017 and 2018. This suggests that investors have a sustained optimistic outlook regarding the future cash flows of these comapanies. In addition, both of these stocks have a higher trading volume relative to the others. This implies that investors can easily resell these stocks in an active trading market and quickly realize any potential gains. 
+Most of the green stocks that experienced a positive growth in 2017 decreased in value in 2018. Among them is DQ which exhibited a 62.6% decline in value by the end of 2018. Considering its contrasting performance in 2017, DQ stock price behaviour is extremely volatile. Along with its low liquidity from its low trading volume, DQ stock can be a risky investment. Therefore, investors should strongly consider diversifying their portfolio of green investments to other companies such as ENPH and RUN. Both of their stock prices experienced consecutive positive growth rates in 2017 and 2018. This suggests that investors have a sustained optimistic outlook regarding the future cash flows of these companies. In addition, both of these stocks have a higher trading volume relative to the others. This implies that investors can easily resell these stocks in an active trading market and quickly realize any potential gains. 
 
 ### Refactored VBA Code Used for Analysis
 <p>
@@ -187,11 +187,10 @@ Another disadvantage of refactoring is the widely varying cost and benefit of do
 The original script involves a nested for loop whose outer loop goes through each row of the stock data of the year concerned. Variables such as total volume, starting closing price, and ending closing price are initialized to either zero or empty prior to the inner for loop. The inner for loop then uses a set of conditionals to check for and update these variables. Once this finishes, the updated variables are used to populate one row of the All Stocks Analysis worksheet with the total volume traded and calculated return of one stock. The variables are then reinitialized to either zero or empty before the process repeats again for the next stock in the data. 
 </p>
 <p>
-The refactored script is similar in structure except that several arrays  of size 12 were initialized prior to the nested for loop. These arrays were designed to hold the total volume traded, starting stock price and ending stock price for the 12 stocks in the data. 
+The refactored script is similar in structure except that several arrays of size 12 were initialized prior to the nested for loop. These arrays were designed to hold the total volume traded, starting stock price and ending stock price for the 12 stocks in the data. 
 </p>
 <p>
-One big advantage of refactoring the script this way is the reduction in the run time of the overall code. The for loop of the original script goes back and forth between the data and the All Stocks Analysis worksheet. Meanwhile, 
-the refactored code tells Excel to continue going through the rows of the data worksheet without leaving it. This is becasue the arrays are updated with relevant information with every iteration of the loop instead of the All Stocks Analysis worksheet. With the refactored code, the All Stocks Analysis worksheet is only activated and updated once the arrays are filled with the relevant information for all 12 stocks. 
+One big advantage of refactoring the script this way is the reduction in the run time of the overall code. The for loop of the original script goes back and forth between the data and the All Stocks Analysis worksheet. Meanwhile, the refactored code tells Excel to continue going through the rows of the data worksheet without leaving it. This is becasue the arrays are updated with relevant information with every iteration of the loop instead of the All Stocks Analysis worksheet. With the refactored code, the All Stocks Analysis worksheet is only activated and updated once the arrays are filled with the relevant information for all 12 stocks. 
 </p>
 <p>
 One disadvantage of the refactored code is that another for loop must be written down in order to access the stored information in the arrays and place them in the appropriate cells of the All Stocks Analysis Worksheet. That and the creation of our arrays are extra lines of code that need to be written for a marginal 0.4 second improvement in run time. 
